@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cabbit Wheel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            gap: 24px;
+        }
+
+        h1 {
+            font-family: 'Noto Serif', serif;
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            animation: glitch 0.4s steps(1) infinite;
+        }
+
+        :root {
+            --wheel-size: 400px;
+            --radius: 180px;
+            --img-size: 80px;
+            --speed: 20s;
+        }
+
+        .wheel {
+            position: relative;
+            width: var(--wheel-size);
+            height: var(--wheel-size);
+            border: 3px solid #444;
+            border-radius: 50%;
+            animation: spin var(--speed) linear infinite;
+        }
+
+        .item {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+        }
+
+        .item:nth-child(1) {
+            transform: rotate(0deg) translate(var(--radius));
+        }
+
+        .item:nth-child(2) {
+            transform: rotate(60deg) translate(var(--radius));
+        }
+
+        .item:nth-child(3) {
+            transform: rotate(120deg) translate(var(--radius));
+        }
+
+        .item:nth-child(4) {
+            transform: rotate(180deg) translate(var(--radius));
+        }
+
+        .item:nth-child(5) {
+            transform: rotate(240deg) translate(var(--radius));
+        }
+
+        .item:nth-child(6) {
+            transform: rotate(300deg) translate(var(--radius));
+        }
+
+        .counter {
+            width: var(--img-size);
+            height: var(--img-size);
+            margin-left: calc(var(--img-size) / -2);
+            margin-top: calc(var(--img-size) / -2);
+        }
+
+        .item:nth-child(1) .counter {
+            animation: counterSpin0 var(--speed) linear infinite;
+        }
+
+        .item:nth-child(2) .counter {
+            animation: counterSpin60 var(--speed) linear infinite;
+        }
+
+        .item:nth-child(3) .counter {
+            animation: counterSpin120 var(--speed) linear infinite;
+        }
+
+        .item:nth-child(4) .counter {
+            animation: counterSpin180 var(--speed) linear infinite;
+        }
+
+        .item:nth-child(5) .counter {
+            animation: counterSpin240 var(--speed) linear infinite;
+        }
+
+        .item:nth-child(6) .counter {
+            animation: counterSpin300 var(--speed) linear infinite;
+        }
+
+        .counter img {
+            width: var(--img-size);
+            height: var(--img-size);
+            border-radius: 10px;
+            display: block;
+        }
+
+        @keyframes glitch {
+            0% {
+                color: #fff;
+            }
+
+            25% {
+                color: #ff0000;
+            }
+
+            50% {
+                color: #fff;
+            }
+
+            75% {
+                color: #ff0000;
+            }
+
+            100% {
+                color: #fff;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes counterSpin0 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes counterSpin60 {
+            from {
+                transform: rotate(-60deg);
+            }
+
+            to {
+                transform: rotate(-420deg);
+            }
+        }
+
+        @keyframes counterSpin120 {
+            from {
+                transform: rotate(-120deg);
+            }
+
+            to {
+                transform: rotate(-480deg);
+            }
+        }
+
+        @keyframes counterSpin180 {
+            from {
+                transform: rotate(-180deg);
+            }
+
+            to {
+                transform: rotate(-540deg);
+            }
+        }
+
+        @keyframes counterSpin240 {
+            from {
+                transform: rotate(-240deg);
+            }
+
+            to {
+                transform: rotate(-600deg);
+            }
+        }
+
+        @keyframes counterSpin300 {
+            from {
+                transform: rotate(-300deg);
+            }
+
+            to {
+                transform: rotate(-660deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The Cabbit Triad</h1>
+
+    <div class="wheel">
+        <div class="item">
+            <div class="counter"><img src="img1.png"></div>
+        </div>
+        <div class="item">
+            <div class="counter"><img src="img2.png"></div>
+        </div>
+        <div class="item">
+            <div class="counter"><img src="img3.png"></div>
+        </div>
+        <div class="item">
+            <div class="counter"><img src="img4.png"></div>
+        </div>
+        <div class="item">
+            <div class="counter"><img src="img5.png"></div>
+        </div>
+        <div class="item">
+            <div class="counter"><img src="img6.png"></div>
+        </div>
+    </div>
+</body>
+
+</html>
